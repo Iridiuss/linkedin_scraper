@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: leads
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  selenium:
+    image: selenium/standalone-chrome:124.0
+    shm_size: 2g
+    ports:
+      - "4444:4444"
+
+  app:
+    build: .
+    env_file:
+      - .env
+    depends_on:
+      mysql:
+        condition: service_healthy
+      selenium:
+        condition: service_started
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/code
+      - ./lead_plugins:/code/lead_plugins
+
+volumes:
+  mysql_data: 

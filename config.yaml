@@ -1,0 +1,49 @@
+keywords:
+  - web dev
+  - app dev
+  - react
+  - nodejs
+  - php
+  - laravel
+  - mern
+  - mean
+  - vr
+  - ar
+  - three.js
+  - unity
+  - blockchain
+  - nft
+  - smart contract
+  - token
+  - hyperledger
+  - devops
+  - aws
+  - gcp
+  - seo
+  - digital marketing
+negative_keywords:
+  - local only
+  - on-site
+  - onsite
+  - no remote
+  - in person
+  - full-time hire
+  - internship
+  - survey
+  - research participant
+  - beta tester
+  - equity only
+scoring:
+  recency_points: 40
+  recency_hours: 48
+  contact:
+    phone: 10
+    email: 10
+    name: 10
+    rate: 10
+  relevance:
+    per_hit: 5
+    max: 20
+status_thresholds:
+  hot: 70
+  warm: 40 

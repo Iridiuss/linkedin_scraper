@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+SQLAlchemy
+pymysql
+python-dotenv
+PyYAML
+openai
+selenium
+playwright
+beautifulsoup4
+email-validator
+cryptography
+fake-useragent
+requests 
